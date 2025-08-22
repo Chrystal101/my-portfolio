@@ -4,7 +4,7 @@ import { Download, FileText, Mail, Phone, MapPin, Linkedin, Github } from 'lucid
 
 const Resume = () => {
   const handleDownload = () => {
-    // Download the actual PDF resume file
+    // Download the resume PDF file
     const link = document.createElement('a');
     link.href = '/resume/Chrystal_Resume.pdf';
     link.download = 'Chrystal_Resume.pdf';
@@ -17,6 +17,7 @@ const Resume = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Resume</h2>
           <p className="text-xl text-gray-600">Download my professional resume</p>
+
         </div>
 
         <div className="max-w-4xl mx-auto">
@@ -40,19 +41,19 @@ const Resume = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-gray-500" />
-                <span className="text-gray-700">your.email@example.com</span>
+                <span className="text-gray-700">jelly12138@outlook.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-gray-500" />
-                <span className="text-gray-700">+1 (555) 123-4567</span>
+                <span className="text-gray-700">Available upon request</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-gray-500" />
-                <span className="text-gray-700">Your City, State</span>
+                <span className="text-gray-700">Toronto, ON, Canada</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Linkedin className="w-5 h-5 text-gray-500" />
-                <span className="text-gray-700">linkedin.com/in/yourprofile</span>
+                <span className="text-gray-700">linkedin.com/in/Chrystal101</span>
               </div>
             </div>
 
@@ -77,11 +78,11 @@ const Resume = () => {
               <div className="space-y-3">
                 <div className="border-l-4 border-blue-600 pl-4">
                   <h5 className="font-medium text-gray-900">Software Engineer</h5>
-                  <p className="text-gray-600">Company Name • 2023 - Present</p>
+                  <p className="text-gray-600">Full-stack development with React and Node.js • 2023 - Present</p>
                 </div>
                 <div className="border-l-4 border-blue-600 pl-4">
                   <h5 className="font-medium text-gray-900">Frontend Developer</h5>
-                  <p className="text-gray-600">Previous Company • 2021 - 2023</p>
+                  <p className="text-gray-600">React development and responsive design • 2021 - 2023</p>
                 </div>
               </div>
             </div>
