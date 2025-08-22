@@ -1,3 +1,5 @@
+'use client';
+
 import { Download, FileText, Mail, Phone, MapPin, Linkedin, Github } from 'lucide-react';
 
 const Resume = () => {
