@@ -3,7 +3,6 @@ import { About } from '@/components/About'
 import { Skills } from '@/components/Skills'
 import { Projects } from '@/components/Projects'
 import { Experience } from '@/components/Experience'
-import Resume from '@/components/Resume'
 import { Contact } from '@/components/Contact'
 
 export default function Home() {
@@ -20,9 +19,6 @@ export default function Home() {
       </section>
       <section id="experience">
         <Experience />
-      </section>
-      <section id="resume">
-        <Resume />
       </section>
       <section id="projects">
         <Projects />

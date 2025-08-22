@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Download, Mail, Github, Linkedin } from 'lucide-react'
+import { Download, Mail, Github, Linkedin, FileText } from 'lucide-react'
 
 export function Hero() {
   return (
@@ -152,6 +152,12 @@ export function Hero() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <motion.button
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/resume/Chrystal_Resume.pdf';
+                link.download = 'Chrystal_Resume.pdf';
+                link.click();
+              }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg shadow-blue-500/25"
@@ -160,20 +166,23 @@ export function Hero() {
               Download Resume
             </motion.button>
             
-            <motion.button
+            <motion.a
+              href="/resume/Chrystal_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex items-center gap-2 px-8 py-3 border-2 border-blue-500 text-blue-400 rounded-lg font-semibold hover:bg-blue-500 hover:text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25"
             >
-              <Mail size={20} />
-              Contact Me
-            </motion.button>
+              <FileText size={20} />
+              View Resume
+            </motion.a>
           </div>
           
           <div className="flex justify-center gap-6 mt-12">
             <motion.a
               whileHover={{ scale: 1.1, y: -5 }}
-              href="https://github.com/yourusername"
+              href="https://github.com/Chrystal101"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors duration-300 hover:shadow-lg hover:shadow-gray-500/25"
@@ -182,7 +191,7 @@ export function Hero() {
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.1, y: -5 }}
-              href="https://linkedin.com/in/yourusername"
+              href="https://linkedin.com/in/yihan-chrystal-xie"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors duration-300 hover:shadow-lg hover:shadow-gray-500/25"

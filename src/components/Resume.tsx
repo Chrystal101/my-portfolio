@@ -4,11 +4,22 @@ import { Download, FileText, Mail, Phone, MapPin, Linkedin, Github } from 'lucid
 
 const Resume = () => {
   const handleDownload = () => {
-    // Download the resume PDF file
-    const link = document.createElement('a');
-    link.href = '/resume/Chrystal_Resume.pdf';
-    link.download = 'Chrystal_Resume.pdf';
-    link.click();
+    // Method 1: Try direct download
+    try {
+      const link = document.createElement('a');
+      link.href = '/resume/Chrystal_Resume.pdf';
+      link.download = 'Chrystal_Resume.pdf';
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      
+      // Add to DOM, click, then remove
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      // Method 2: Fallback to opening in new tab
+      window.open('/resume/Chrystal_Resume.pdf', '_blank');
+    }
   };
 
   return (
@@ -17,6 +28,7 @@ const Resume = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Resume</h2>
           <p className="text-xl text-gray-600">Download my professional resume</p>
+
 
         </div>
 
@@ -35,6 +47,17 @@ const Resume = () => {
                 <Download className="w-5 h-5" />
                 <span>Download PDF</span>
               </button>
+              
+              {/* Alternative: Open in new tab */}
+              <a
+                href="/resume/Chrystal_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-4 bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-lg flex items-center space-x-2 transition-colors"
+              >
+                <FileText className="w-5 h-5" />
+                <span>View PDF</span>
+              </a>
             </div>
 
             {/* Contact Information */}
@@ -88,28 +111,7 @@ const Resume = () => {
             </div>
           </div>
 
-          {/* Alternative Download Options */}
-          <div className="text-center">
-            <p className="text-gray-600 mb-4">
-              Having trouble downloading? Try these alternatives:
-            </p>
-            <div className="flex justify-center space-x-4">
-              <button
-                onClick={handleDownload}
-                className="text-blue-600 hover:text-blue-700 underline"
-              >
-                Direct Download
-              </button>
-                              <a
-                  href="/resume/Chrystal_Resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-700 underline"
-                >
-                  Open Resume in New Tab
-                </a>
-            </div>
-          </div>
+
         </div>
       </div>
     </section>
