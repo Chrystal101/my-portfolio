@@ -2,11 +2,8 @@ import { Download, FileText, Mail, Phone, MapPin, Linkedin, Github } from 'lucid
 
 const Resume = () => {
   const handleDownload = () => {
-    // Replace with your actual resume file path
-    const link = document.createElement('a');
-    link.href = '/resume/your-resume.pdf';
-    link.download = 'YourName_Resume.pdf';
-    link.click();
+    // Note: Resume file needs to be uploaded to Vercel separately
+    alert('Resume download feature coming soon! Please contact me directly for my resume.');
   };
 
   return (
@@ -97,14 +94,12 @@ const Resume = () => {
               >
                 Direct Download
               </button>
-              <a
-                href="/resume/your-resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:text-blue-700 underline"
-              >
-                Open in New Tab
-              </a>
+                              <a
+                  href="mailto:jelly12138@outlook.com"
+                  className="text-blue-600 hover:text-blue-700 underline"
+                >
+                  Email Me for Resume
+                </a>
             </div>
           </div>
         </div>
