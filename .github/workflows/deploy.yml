@@ -34,6 +34,17 @@ jobs:
       - name: Build project
         run: npm run build
       
+      - name: Test Vercel Connection
+        run: |
+          echo "Testing Vercel connection..."
+          echo "ORG_ID: ${{ secrets.ORG_ID }}"
+          echo "PROJECT_ID: ${{ secrets.PROJECT_ID }}"
+          echo "Token exists: ${{ secrets.VERCEL_TOKEN != '' }}"
+          echo "Token length: ${#VERCEL_TOKEN}"
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        continue-on-error: true
+      
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v25
         with:
