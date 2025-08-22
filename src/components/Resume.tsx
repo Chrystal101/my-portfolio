@@ -4,53 +4,10 @@ import { Download, FileText, Mail, Phone, MapPin, Linkedin, Github } from 'lucid
 
 const Resume = () => {
   const handleDownload = () => {
-    // Create a temporary link to download resume
+    // Download the actual PDF resume file
     const link = document.createElement('a');
-    link.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(`
-CHRYSTAL - SOFTWARE ENGINEER PORTFOLIO
-
-CONTACT INFORMATION
-Email: jelly12138@outlook.com
-Location: Toronto, ON, Canada
-LinkedIn: linkedin.com/in/Chrystal101
-GitHub: github.com/Chrystal101
-
-TECHNICAL SKILLS
-• Frontend: React, Next.js, TypeScript, Tailwind CSS
-• Backend: Node.js, Python, SQL
-• Tools: Git, AWS, Docker
-• Languages: JavaScript/TypeScript, Python, SQL
-
-EXPERIENCE
-Software Engineer (2023 - Present)
-• Full-stack development with React and Node.js
-• Built responsive web applications
-• Collaborated with cross-functional teams
-
-Frontend Developer (2021 - 2023)
-• Developed user interfaces with React
-• Implemented responsive design principles
-• Optimized application performance
-
-EDUCATION
-• Bachelor's Degree in Computer Science
-• Relevant coursework: Data Structures, Algorithms, Web Development
-• GPA: 3.8/4.0
-
-PROJECTS
-• Personal Portfolio Website (Next.js, React, TypeScript)
-• E-commerce Platform (React, Node.js, MongoDB)
-• Task Management App (React, Firebase)
-
-AVAILABLE FOR
-• Full-time positions
-• New grad programs
-• Remote opportunities
-• Relocation ready
-
-Please contact me at jelly12138@outlook.com for my full resume.
-    `);
-    link.download = 'Chrystal_Resume.txt';
+    link.href = '/resume/Chrystal_Resume.pdf';
+    link.download = 'Chrystal_Resume.pdf';
     link.click();
   };
 
@@ -143,10 +100,12 @@ Please contact me at jelly12138@outlook.com for my full resume.
                 Direct Download
               </button>
                               <a
-                  href="mailto:jelly12138@outlook.com"
+                  href="/resume/Chrystal_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-blue-600 hover:text-blue-700 underline"
                 >
-                  Email Me for Resume
+                  Open Resume in New Tab
                 </a>
             </div>
           </div>
